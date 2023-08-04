@@ -19,11 +19,9 @@ function calcularMedia( float $n1, float $n2 ):float {
 }
 
 function verificarSituacao( float $valorMedia ):string {
-    if($valorMedia >= 7){
-        return "aprovado";
-    } else {
-        return "reprovado";
-    }
+    /* Sintaxe alternativa usando 
+    operador ternário ?: */
+    return $valorMedia >= 7 ? "aprovado" : "reprovado";
 }
 $nota1 = 10;
 $nota2 = 7;

@@ -69,6 +69,25 @@ $textoBandas = implode(" - ", $bandas);
 <pre><?=var_dump($bandas)?></pre>
 <pre><?=var_dump($textoBandas)?></pre>
 
+<h3>extract()</h3>
+<?php
+/* Função que extrai chaves associativas
+para variáveis. */
+$aluno = [
+    "id" => 1,
+    "nome" => "Chaves do 8",
+    "idade" => 25
+];
+
+extract($aluno);
+?>
+<ul>
+    <li>ID: <?=$id?> </li>
+    <li>Nome: <?=$nome?> </li>
+    <li>Idade: <?=$idade?> </li>
+</ul>
+
+
     <h2>Filtros</h2>
     
     <h2>Segurança</h2>

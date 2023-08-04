@@ -20,6 +20,23 @@ $nomeSemEspaco = trim($nome);
 <pre> <?=var_dump($nome)?> </pre>
 <pre> <?=var_dump($nomeSemEspaco)?> </pre>
 
+<h3>str_replace()</h3>
+<?php
+/* Função que permite substituição
+de strings/caracteres. */
+$fraseFeia = "Fulano é um bobão e xarope";
+$fraseBunitinha = str_replace(
+    ["xarope", "bobão"], 
+    // "******",
+    // "🤬",
+    ["🤬","💩"],
+    $fraseFeia
+);
+?>
+<p> <?=$fraseFeia?> </p>
+<p> <?=$fraseBunitinha?> </p>
+
+
     <hr>
     <h2>Numéricas</h2>
     

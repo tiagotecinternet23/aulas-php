@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 05 - Funções (OK)</title>
-
+<style>
+    .aprovado { color: blue; }
+    .reprovado { color: red; }
+</style>
 </head>
 <body>
     <h1>Exercício 05 - Funções (OK)</h1>
@@ -34,7 +37,7 @@ $situacao = verificarSituacao($media);
 
 ?>
 <p> <?=$media?> </p>
-<p> <?=$situacao?> </p>
+<p class="<?=$situacao?>"> <?=$situacao?> </p>
   
 
 

@@ -14,16 +14,11 @@
     <hr>
 
 <?php
-function calcularMedia( $n1, $n2 ){
-    // Versão 1 (variável local)
-    //$media = ($n1 + $n2) / 2;
-    //return $media;
-
-    // Versão 2 (retono ímplicito)
+function calcularMedia( float $n1, float $n2 ):float {
     return ($n1 + $n2) / 2;
 }
 
-function verificarSituacao( $valorMedia ){
+function verificarSituacao( float $valorMedia ):string {
     if($valorMedia >= 7){
         return "aprovado";
     } else {
@@ -34,7 +29,6 @@ $nota1 = 10;
 $nota2 = 7;
 $media = calcularMedia($nota1, $nota2);
 $situacao = verificarSituacao($media);
-
 ?>
 <p> <?=$media?> </p>
 <p class="<?=$situacao?>"> <?=$situacao?> </p>

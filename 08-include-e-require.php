@@ -1,6 +1,6 @@
 <?php
 /* Fazendo a inclusão de um arquivo de recursos */
-require "recurso.php";
+require "recursos.php";
 
 /* include OU require
 A diferença entre eles é na forma como lidam no

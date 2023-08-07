@@ -131,6 +131,22 @@ a função abaixo retornará "false". */
 </pre>
 
     <h3>Sanitização</h3>
+<?php
+$ataque = "<script>
+document.body.innerHTML = '<h1>Sou ráqui!! mwahaha :( </h1>'
+</script>";
+
+// Execução sem sanitização (script é válido)
+//echo $ataque;
+
+$ataqueSanitizado = filter_var(
+    $ataque, FILTER_SANITIZE_SPECIAL_CHARS
+);
+
+// Execução com sanitização (script é anulado)
+echo $ataqueSanitizado;
+?>
+
 
     <hr>
     <h2>Segurança</h2>

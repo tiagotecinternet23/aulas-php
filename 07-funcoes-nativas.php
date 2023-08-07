@@ -111,8 +111,28 @@ $produtosUnicos = array_unique($produtos);
 <pre><?=var_dump($produtosUnicos)?></pre>
 
     <hr>
+
     <h2>Filtros</h2>
-    
+    <p>Recursos/Constantes de análise 
+    e limpeza de dados aplicados através 
+    das funções <code>filter_var()</code> e 
+    <code>filter_input()</code>.</p>
+
+    <h3>Validação</h3>
+<?php
+$email = "tiago@algo.com.br";
+
+/* Se o e-mail informado for inválido, ou seja,
+se não seguir o padrão geral de endereços de e-mail,
+a função abaixo retornará "false". */
+?>
+<pre>
+<?=var_dump( filter_var($email, FILTER_VALIDATE_EMAIL) )?> 
+</pre>
+
+    <h3>Sanitização</h3>
+
+    <hr>
     <h2>Segurança</h2>
 
 </body>

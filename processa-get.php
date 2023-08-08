@@ -11,9 +11,10 @@
     <p>Receber e processar dados via <b>GET</b></p>
 <?php
 // Capturando os dados transmitidos
-$nome = $_GET["nome"];
-$email = $_GET["email"];
-$mensagem = $_GET["mensagem"];
+// $nome = $_GET["nome"];
+// $email = $_GET["email"];
+// $mensagem = $_GET["mensagem"];
+extract($_GET);
 ?>
     <h2>Dados:</h2>
     <ul>

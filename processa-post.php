@@ -21,12 +21,21 @@ if( empty($_POST["nome"]) || empty($_POST["email"]) ){
 } else {
     $nome = $_POST["nome"];
     $email = $_POST["email"];
+    $idade = $_POST["idade"];
     $mensagem = $_POST["mensagem"];
+
+
+    /* Se houver interesses (ou seja, foi selecionado
+    pelo menos 1), guarde na variável o $_POST["interesses"].
+    Caso contrário, guarde na variável um array vazio. */
+    $interesses = $_POST["interesses"];
 ?>
     <h2>Dados:</h2>
     <ul>
         <li>Nome: <?=$nome?></li>
         <li>E-mail: <?=$email?></li>
+        <li>Idade: <?=$idade?></li>
+        <li>Interesses: <?= implode(", ", $interesses) ?></li>
         
         <!-- Se a variável mensagem NÃO ESTIVER VAZIA,
         mostre o <li> com a mensagem -->

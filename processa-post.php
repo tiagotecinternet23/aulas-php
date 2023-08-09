@@ -31,16 +31,30 @@ if( empty($_POST["nome"]) || empty($_POST["email"]) ){
     
     /* Solução usando Operador de coalescência: ?? 
     (disponível a partir da versão 7 do PHP) */
-    $interesses = $_POST["interesses"] ?? [];
-
-    
+    $interesses = $_POST["interesses"] ?? [];    
 ?>
     <h2>Dados:</h2>
     <ul>
         <li>Nome: <?=$nome?></li>
         <li>E-mail: <?=$email?></li>
         <li>Idade: <?=$idade?></li>
+
+        <?php if( !empty($interesses) ){ ?>
+        
+        <!-- Versão 1:
+        Transformando o array $interesses em string -->
         <li>Interesses: <?= implode(", ", $interesses) ?></li>
+        
+        <!-- Versão 2: acessando cada interesse
+        existente no array usando loop -->
+        <li>Interesses: 
+            <ul>
+                <?php foreach( $interesses as $interesse ) { ?>
+                <li> <?=$interesse?> </li>
+                <?php } ?>
+            </ul>
+        </li>
+        <?php } ?>
         
         <!-- Se a variável mensagem NÃO ESTIVER VAZIA,
         mostre o <li> com a mensagem -->

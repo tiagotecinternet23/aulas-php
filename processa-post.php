@@ -28,7 +28,12 @@ if( empty($_POST["nome"]) || empty($_POST["email"]) ){
     /* Se houver interesses (ou seja, foi selecionado
     pelo menos 1), guarde na variável o $_POST["interesses"].
     Caso contrário, guarde na variável um array vazio. */
-    $interesses = $_POST["interesses"];
+    
+    /* Solução usando Operador de coalescência: ?? 
+    (disponível a partir da versão 7 do PHP) */
+    $interesses = $_POST["interesses"] ?? [];
+
+    
 ?>
     <h2>Dados:</h2>
     <ul>

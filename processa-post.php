@@ -19,19 +19,20 @@ if( empty($_POST["nome"]) || empty($_POST["email"]) ){
     <p><a href="10-formulario.html">Voltar</a></p>
 <?php    
 } else {
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $idade = $_POST["idade"];
-    $mensagem = $_POST["mensagem"];
+    //$nome = filter_var($_POST["nome"], FILTER_SANITIZE_SPECIAL_CHARS);
+    $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
 
-
-    /* Se houver interesses (ou seja, foi selecionado
-    pelo menos 1), guarde na variável o $_POST["interesses"].
-    Caso contrário, guarde na variável um array vazio. */
+    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
     
-    /* Solução usando Operador de coalescência: ?? 
-    (disponível a partir da versão 7 do PHP) */
-    $interesses = $_POST["interesses"] ?? [];    
+    $idade = filter_input(INPUT_POST, "idade", FILTER_SANITIZE_NUMBER_INT);
+    
+    $mensagem = filter_input(INPUT_POST, "mensagem", FILTER_SANITIZE_SPECIAL_CHARS);
+    
+    // $interesses = $_POST["interesses"] ?? [];    
+    $interesses = filter_var_array( 
+        $_POST["interesses"] ?? [],  
+        FILTER_SANITIZE_SPECIAL_CHARS
+    );    
 ?>
     <h2>Dados:</h2>
     <ul>
